@@ -1,14 +1,16 @@
-.logo__link {
+import styled from 'styled-components';
+
+export const StyledLogo = styled.a`
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 398px;
   text-decoration: none;
-}
+`;
 
-.logo__text {
+export const Text = styled.span`
   font-weight: 700;
   font-size: 28px;
   line-height: 115%;
-  color: #333333;
-}
+  color: ${(props) => props.theme.colorBlackForText};
+`;
