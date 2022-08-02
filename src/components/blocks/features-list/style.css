@@ -1,0 +1,18 @@
+.features {
+  padding: 100px 90px;
+  text-align: center;
+}
+
+.features__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 20px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  margin-top: 64px;
+  margin-bottom: 64px;
+  list-style: none;
+  text-align: left;
+}
