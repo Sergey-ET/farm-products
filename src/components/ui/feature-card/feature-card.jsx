@@ -1,38 +1,28 @@
 import React from 'react';
 import Title, { TitleSize, TitleLevel } from '/src/components/ui/title/title';
-import './style.css';
+import {
+  StyledFeatureCard,
+  Container,
+  Image,
+  Wrapper,
+  Producer,
+  Description
+} from './styles';
 
 function FeatureCard({ producer, title, isNegative, description, image }) {
   return (
-    <article
-      className={`feature-card${isNegative ? ' feature-card--negative' : ''}`}
-    >
-      <div className="feature-card__container">
-        <img
-          src={image}
-          className="feature-card__image"
-          width={56}
-          height={56}
-          alt="icon"
-        />
-        <div className="feature-card__wrapper">
-          <span
-            className={`feature-card__producer${
-              isNegative ? ' feature-card__producer--negative' : ''
-            }`}
-          >
-            {producer}
-          </span>
+    <StyledFeatureCard $isNegative={isNegative}>
+      <Container>
+        <Image src={image} width={56} height={56} alt="icon" />
+        <Wrapper>
+          <Producer $isNegative={isNegative}>{producer}</Producer>
           <Title level={TitleLevel.H4} size={TitleSize.SMALL}>
             {title}
           </Title>
-        </div>
-      </div>
-      <p
-        className="feature-card__description"
-        dangerouslySetInnerHTML={{ __html: description }}
-      />
-    </article>
+        </Wrapper>
+      </Container>
+      <Description dangerouslySetInnerHTML={{ __html: description }} />
+    </StyledFeatureCard>
   );
 }
 
