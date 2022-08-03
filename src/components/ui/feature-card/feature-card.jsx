@@ -1,5 +1,5 @@
 import React from 'react';
-import Title, { titleSize } from '/src/components/ui/title/title';
+import Title, { TitleSize, TitleLevel } from '/src/components/ui/title/title';
 import './style.css';
 
 function FeatureCard({ producer, title, isNegative, description, image }) {
@@ -23,7 +23,9 @@ function FeatureCard({ producer, title, isNegative, description, image }) {
           >
             {producer}
           </span>
-          <Title size={titleSize.h4}>{title}</Title>
+          <Title level={TitleLevel.H4} size={TitleSize.SMALL}>
+            {title}
+          </Title>
         </div>
       </div>
       <p

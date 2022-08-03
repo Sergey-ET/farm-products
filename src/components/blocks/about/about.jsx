@@ -1,11 +1,11 @@
-import React from 'react';
-import Title, { titleSize } from '/src/components/ui/title/title';
-import './style.css';
+import React from "react";
+import Title, { TitleSize } from "/src/components/ui/title/title";
+import "./style.css";
 
-function About() {
+function About({ level }) {
   return (
     <section className="about">
-      <Title size={titleSize.h1}>
+      <Title size={TitleSize.BIG} level={level}>
         Магазин фермерских продуктов с доставкой
       </Title>
       <p className="about__text">
