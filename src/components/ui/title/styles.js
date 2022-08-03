@@ -1,31 +1,31 @@
 import styled from 'styled-components';
 import { TitleSize } from './title';
 
+const getTitleOptions = (props) => {
+  let titleOptions = {
+    fontSize: '36px',
+    lineHeight: '115%'
+  };
+  if (props.$size === TitleSize.BIG) {
+    titleOptions.fontSize = '44px';
+    titleOptions.lineHeight = '115%';
+  }
+  if (props.$size === TitleSize.NORMAL) {
+    titleOptions.fontSize = '24px';
+    titleOptions.lineHeight = '130%';
+  }
+  if (props.$size === TitleSize.SMALL) {
+    titleOptions.fontSize = '18px';
+    titleOptions.lineHeight = '150%';
+  }
+
+  return titleOptions;
+};
+
 export const StyledTitle = styled.h1`
   margin: 0;
   padding: 0;
   font-weight: 700;
-  line-height: ${(props) => {
-    let lineHeight = '115%';
-    if (props.$size === TitleSize.NORMAL) {
-      lineHeight = '130%';
-    }
-    if (props.$size === TitleSize.SMALL) {
-      lineHeight = '150%';
-    }
-    return lineHeight;
-  }};
-  font-size: ${(props) => {
-    let fontSize = '36px';
-    if (props.$size === TitleSize.BIG) {
-      fontSize = '44px';
-    }
-    if (props.$size === TitleSize.NORMAL) {
-      fontSize = '24px';
-    }
-    if (props.$size === TitleSize.SMALL) {
-      fontSize = '18px';
-    }
-    return fontSize;
-  }};
+  font-size: ${(props) => getTitleOptions(props).fontSize};
+  line-height: ${(props) => getTitleOptions(props).lineHeight};
 `;
