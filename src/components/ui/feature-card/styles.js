@@ -3,13 +3,10 @@ import styled from 'styled-components';
 export const StyledFeatureCard = styled.article`
   min-height: 197px;
   padding: ${(props) => props.theme.indent};
-  background-color: ${(props) => {
-    let backgroundColor = props.theme.colorForPositiveFeature;
-    if (props.$isNegative) {
-      backgroundColor = props.theme.colorForNegativeFeature;
-    }
-    return backgroundColor;
-  }};
+  background-color: ${(props) =>
+    props.isNegative
+      ? props.theme.colorForNegativeFeature
+      : props.theme.colorForPositiveFeature};
 `;
 
 export const Container = styled.div`
@@ -35,14 +32,11 @@ export const Producer = styled.span`
   font-weight: 400;
   font-size: 14px;
   line-height: 150%;
-  color: #ffffff;
-  background-color: ${(props) => {
-    let backgroundColor = props.theme.colorForFarmLabel;
-    if (props.$isNegative) {
-      backgroundColor = props.theme.colorForShopLabel;
-    }
-    return backgroundColor;
-  }};
+  color: ${(props) => props.theme.colorWhite};
+  background-color: ${(props) =>
+    props.isNegative
+      ? props.theme.colorForShopLabel
+      : props.theme.colorForFarmLabel};
 `;
 
 export const Description = styled.p`
