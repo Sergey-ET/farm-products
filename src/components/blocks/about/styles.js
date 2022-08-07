@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Section } from '/src/components/styled';
-import AboutImage from '/src/assets/icons/farmer.svg';
+import aboutImage from '/src/assets/icons/farmer.svg';
 
 export const StyledSection = styled(Section)`
   position: relative;
@@ -20,7 +20,7 @@ export const StyledSection = styled(Section)`
     bottom: 0;
     width: 446px;
     height: 627px;
-    background-image: url(${AboutImage});
+    background-image: url(${aboutImage});
     background-repeat: no-repeat;
     overflow: hidden;
   }
