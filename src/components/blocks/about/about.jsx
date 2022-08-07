@@ -2,10 +2,10 @@ import React from 'react';
 import Title, { TitleSize } from '/src/components/ui/title/title';
 import { StyledSection, Text } from './styles';
 
-function About({ level }) {
+function About() {
   return (
     <StyledSection>
-      <Title size={TitleSize.BIG} level={level}>
+      <Title size={TitleSize.BIG}>
         Магазин фермерских продуктов с доставкой
       </Title>
       <Text>

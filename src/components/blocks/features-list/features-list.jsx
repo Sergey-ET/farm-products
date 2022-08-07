@@ -4,12 +4,12 @@ import FeatureCard from '/src/components/ui/feature-card/feature-card';
 import Button from '/src/components/ui/button/button';
 import { StyledFeaturesList, StyledList, StyledItem } from './styles';
 
-function FeaturesList({ features, level }) {
+function FeaturesList({ features }) {
   return (
     <StyledFeaturesList>
       {features?.length ? (
         <>
-          <Title level={level}>Почему фермерские продукты лучше?</Title>
+          <Title as="h2">Почему фермерские продукты лучше?</Title>
           <StyledList>
             {features.map((feature) => (
               <StyledItem key={feature.id}>

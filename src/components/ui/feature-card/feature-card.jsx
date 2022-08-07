@@ -1,5 +1,5 @@
 import React from 'react';
-import Title, { TitleSize, TitleLevel } from '/src/components/ui/title/title';
+import Title, { TitleSize } from '/src/components/ui/title/title';
 import {
   StyledFeatureCard,
   Container,
@@ -16,7 +16,7 @@ function FeatureCard({ producer, title, isNegative, description, image }) {
         <Image src={image} width={56} height={56} alt="icon" />
         <Wrapper>
           <Producer $isNegative={isNegative}>{producer}</Producer>
-          <Title level={TitleLevel.H4} size={TitleSize.SMALL}>
+          <Title size={TitleSize.EXTRA_SMALL} as="h4">
             {title}
           </Title>
         </Wrapper>
