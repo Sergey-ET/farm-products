@@ -2,15 +2,15 @@ import React from 'react';
 import Header from '/src/components/layout/header/header';
 import MainPage from '/src/components/pages/main-page/main-page';
 import Footer from '/src/components/layout/footer/footer';
-import './style.css';
+import { StyledMain } from './styles';
 
 function PageWrapper({ ...prop }) {
   return (
     <>
       <Header />
-      <main className="page-wrapper__main">
+      <StyledMain>
         <MainPage {...prop} />
-      </main>
+      </StyledMain>
       <Footer />
     </>
   );
