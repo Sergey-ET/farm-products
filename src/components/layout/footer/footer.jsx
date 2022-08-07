@@ -1,13 +1,13 @@
 import React from 'react';
 import Logo from '/src/components/ui/logo/logo';
-import './style.css';
+import { StyledSection } from './styles';
 
 function Footer() {
   return (
-    <footer className="footer">
+    <StyledSection as="header">
       <Logo />
-      <span className="footer__copyright">Создано 2021</span>
-    </footer>
+      <span>Создано 2021</span>
+    </StyledSection>
   );
 }
 
