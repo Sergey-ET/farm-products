@@ -1,19 +1,19 @@
-import React from "react";
-import Title, { TitleSize } from "/src/components/ui/title/title";
-import "./style.css";
+import React from 'react';
+import Title, { TitleSize } from '/src/components/ui/title/title';
+import { StyledSection, Text } from './styles';
 
 function About({ level }) {
   return (
-    <section className="about">
+    <StyledSection>
       <Title size={TitleSize.BIG} level={level}>
         Магазин фермерских продуктов с доставкой
       </Title>
-      <p className="about__text">
+      <Text>
         Все продукты изготавливаются под заказ. Фермеры начинают готовить
         продукты за день до отправки заказа клиентам. Именно поэтому мы
         принимаем заказы заранее и доставляем продукты максимально свежими.
-      </p>
-    </section>
+      </Text>
+    </StyledSection>
   );
 }
 
