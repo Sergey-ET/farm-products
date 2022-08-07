@@ -1,15 +1,15 @@
 import React from 'react';
 import Logo from '/src/components/ui/logo/logo';
 import Nav from '/src/components/layout/nav/nav';
-import './style.css';
+import { StyledSection } from './styles';
 
 function Header() {
   return (
     <>
-      <header className="header">
+      <StyledSection as="header">
         <Logo />
         <Nav />
-      </header>
+      </StyledSection>
     </>
   );
 }
