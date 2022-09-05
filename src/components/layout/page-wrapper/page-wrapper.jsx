@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '/src/components/layout/header/header';
-import MainPage from '/src/components/pages/main-page/main-page';
+import OrderPage from '/src/components/pages/order-page/order-page';
 import Footer from '/src/components/layout/footer/footer';
 import { StyledMain } from './styles';
 
@@ -9,7 +9,7 @@ function PageWrapper({ ...prop }) {
     <>
       <Header />
       <StyledMain>
-        <MainPage {...prop} />
+        <OrderPage {...prop} />
       </StyledMain>
       <Footer />
     </>
