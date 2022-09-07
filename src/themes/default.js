@@ -1,7 +1,7 @@
 export const DefaultTheme = {
   colorBlackForText: '#333333',
   colorWhite: '#FFFFFF',
-  colorGray: '#F6F6F6',
+  colorGray: '#F7F7F7',
   colorBlue: '#D8ECFE',
   colorForPositiveFeature: '#E1EDCE',
   colorForNegativeFeature: '#F8DDD7',
@@ -13,5 +13,7 @@ export const DefaultTheme = {
   indent: '20px',
   fontFamily: '"Inter", "Arial", sans-serif',
   fontSizeDefault: '18px',
-  pageWidth: '1280px'
+  pageWidth: '1280px',
+  headerHeight: '80px',
+  footerHeight: '80px'
 };
