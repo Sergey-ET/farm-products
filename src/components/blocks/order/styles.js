@@ -3,6 +3,7 @@ import { Section, Form } from '/src/components/styled';
 import Title from '/src/components/ui/title/title';
 import tick from '/src/assets/icons/tick.svg';
 import Price from '/src/components/ui/price/price';
+import { Swiper } from 'swiper/react';
 
 export const StyledSection = styled(Section)`
   position: absolute;
@@ -26,9 +27,9 @@ export const StyledTitle = styled(Title)`
 `;
 
 export const StyledForm = styled(Form)`
-  max-height: 100%;
-  padding-right: 20px;
+  padding-right: ${(props) => props.theme.indent};
   overflow-y: overlay;
+  max-height: 100%;
 `;
 
 export const FormItem = styled.div`
@@ -83,4 +84,12 @@ export const CheckboxLabel = styled.span`
       border: 1px solid rgba(0, 0, 0, 0.1);
     }
   `}
+`;
+
+export const StyledSwiper = styled(Swiper)`
+  width: 727px;
+
+  .swiper-slide {
+    flex-shrink: 1;
+  }
 `;

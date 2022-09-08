@@ -14,4 +14,5 @@ export const StyledSection = styled(Section)`
   margin: 0 auto;
   background-color: ${(props) => props.theme.colorWhite};
   border-top: 1px solid rgba(0, 0, 0, 0.1);
+  z-index: 1;
 `;
