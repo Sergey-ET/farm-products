@@ -33,6 +33,14 @@ function Order({ products }) {
       swiperRef.slideTo(index, 0);
     }
   };
+  const [address, setAddress] = useState('');
+  const handleBuyClick = () => {
+    alert(`Спасибо за заказ, вы купили:\n${selectProducts.map(
+      (product) => `${product.title} - ${product.price} руб.\n`
+    )}
+    Итого: ${fullPrice} руб.
+    Доставка по адресу: ${address}.`);
+  };
 
   return (
     <>
@@ -61,12 +69,15 @@ function Order({ products }) {
               minWidth={313}
               type="text"
               placeholder="Введите адрес доставки"
+              onChange={(e) => setAddress(e.target.value)}
             />
             <Label $small $margin={8}>
               Цена
             </Label>
             <PriceValue value={fullPrice} />
-            <Button minWidth={313}>Купить</Button>
+            <Button minWidth={313} onClick={handleBuyClick}>
+              Купить
+            </Button>
           </FormItem>
         </StyledForm>
         <StyledSwiper

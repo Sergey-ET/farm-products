@@ -29,4 +29,10 @@ export const StyledButton = styled.a`
   &:active {
     box-shadow: none;
   }
+
+  &:disabled {
+    opacity: 0.5;
+    box-shadow: none;
+    background-color: ${(props) => props.theme.colorForButton};
+  }
 `;
