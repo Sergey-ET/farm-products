@@ -5,7 +5,9 @@ import { TitleSize } from '/src/components/ui/title/title';
 import Input from '/src/components/ui/input/input';
 import CheckboxList from '/src/components/ui/checkbox-list/checkbox-list';
 import ProductCard from '/src/components/ui/product-card/product-card';
-
+import { SwiperSlide } from 'swiper/react';
+import { Mousewheel, Scrollbar } from 'swiper';
+import 'swiper/swiper-bundle.min.css';
 import {
   StyledSection,
   StyledTitle,
@@ -16,11 +18,8 @@ import {
   StyledSwiper
 } from './styles';
 
-import { Mousewheel, Scrollbar } from 'swiper';
-import { SwiperSlide } from 'swiper/react';
-import 'swiper/swiper.scss';
-
 function Order({ products }) {
+  const [swiperRef, setSwiperRef] = useState(null);
   const [selectProductIds, setSelectProductIds] = useState([]);
   const selectProducts = selectProductIds.map((id) =>
     products.find((product) => product.id === id)
@@ -29,6 +28,11 @@ function Order({ products }) {
     (sum, product) => (sum += product.price),
     0
   );
+  const handleOnClickProduct = (value, index) => {
+    if (!selectProductIds.includes(value)) {
+      swiperRef.slideTo(index, 0);
+    }
+  };
 
   return (
     <>
@@ -48,6 +52,7 @@ function Order({ products }) {
               }))}
               selectValues={selectProductIds}
               onChange={setSelectProductIds}
+              onClickLabel={handleOnClickProduct}
             />
           </FormItem>
           <FormItem>
@@ -66,11 +71,12 @@ function Order({ products }) {
         </StyledForm>
         <StyledSwiper
           modules={[Mousewheel, Scrollbar]}
-          direction={'vertical'}
+          onSwiper={setSwiperRef}
           spaceBetween={12}
+          direction={'vertical'}
           slidesPerView={'auto'}
-          mousewheel
           scrollbar={{ draggable: true }}
+          mousewheel
         >
           {products.map((product) => (
             <SwiperSlide key={product.id}>

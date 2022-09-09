@@ -16,6 +16,7 @@ export const ProductImage = styled.img`
   height: 248px;
   margin-right: 20px;
   object-fit: cover;
+  cursor: pointer;
 `;
 
 export const ContentWrapper = styled.div`
@@ -25,6 +26,7 @@ export const ContentWrapper = styled.div`
 
 export const StyledTitle = styled(Title)`
   margin-bottom: 16px;
+  cursor: pointer;
 `;
 
 export const Price = styled.span`
