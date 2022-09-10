@@ -5,6 +5,7 @@ import { TitleSize } from '/src/components/ui/title/title';
 import Input from '/src/components/ui/input/input';
 import CheckboxList from '/src/components/ui/checkbox-list/checkbox-list';
 import ProductCard from '/src/components/ui/product-card/product-card';
+import AlertMessage from '/src/components/ui/alert-message/alert-message';
 import { SwiperSlide } from 'swiper/react';
 import { Mousewheel, Scrollbar } from 'swiper';
 import 'swiper/swiper-bundle.min.css';
@@ -35,14 +36,16 @@ function Order({ products }) {
   };
   const [address, setAddress] = useState('');
   const handleBuyClick = () => {
-    alert(`Спасибо за заказ, вы купили:\n${selectProducts.map(
-      (product) => `${product.title} - ${product.price} руб.\n`
-    )}
+    alert(
+      `Спасибо за заказ! Вы купили:\n${selectProducts.map(
+        (product) => `${product.title} - ${product.price} руб.\n`
+      )}
     Итого: ${fullPrice} руб.
-    Доставка по адресу: ${address}.`);
+    Доставка по адресу: ${address}.`
+    );
   };
 
-  return (
+  return products && products.length ? (
     <>
       <StyledSection>
         <StyledTitle level={1} size={TitleSize.BIG}>
@@ -97,6 +100,10 @@ function Order({ products }) {
         </StyledSwiper>
       </StyledSection>
     </>
+  ) : (
+    <AlertMessage
+      text={'Извините, продукты были слишком вкусные и их разобрали...'}
+    />
   );
 }
 
