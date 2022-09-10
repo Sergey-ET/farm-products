@@ -78,7 +78,11 @@ function Order({ products }) {
               Цена
             </Label>
             <PriceValue value={fullPrice} />
-            <Button minWidth={313} onClick={handleBuyClick}>
+            <Button
+              minWidth={313}
+              onClick={handleBuyClick}
+              disabled={!(selectProductIds.length && address)}
+            >
               Купить
             </Button>
           </FormItem>
