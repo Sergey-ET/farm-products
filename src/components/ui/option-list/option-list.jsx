@@ -1,6 +1,6 @@
 import React from 'react';
 import { Ul } from '/src/components/styled';
-import { Option, Property, StyledUl } from './styles';
+import { Option, Property } from './styles';
 
 function OptionsList({ list = [], delimeter = ': ' }) {
   return (

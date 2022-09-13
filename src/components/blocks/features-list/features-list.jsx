@@ -2,6 +2,7 @@ import React from 'react';
 import Title from '/src/components/ui/title/title';
 import FeatureCard from '/src/components/ui/feature-card/feature-card';
 import Button from '/src/components/ui/button/button';
+import { AppRoute } from '/src/const';
 import { StyledFeaturesList, StyledList, StyledItem } from './styles';
 
 function FeaturesList({ features }) {
@@ -17,7 +18,7 @@ function FeaturesList({ features }) {
               </StyledItem>
             ))}
           </StyledList>
-          <Button minWidth={260} link="/order">
+          <Button minWidth={260} link={AppRoute.ORDER}>
             Купить
           </Button>
         </>
